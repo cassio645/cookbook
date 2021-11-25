@@ -50,3 +50,12 @@ class CriarView(CreateView):
     form_class = ReceitaForm
     model = Receita
     success_url = reverse_lazy("receitas:home")
+
+
+class EditarView(UpdateView):
+    model = Receita
+    form_class = ReceitaForm
+    template_name = "myapp/receita_edit.html"
+    success_url = reverse_lazy('receitas:home')
+
+
