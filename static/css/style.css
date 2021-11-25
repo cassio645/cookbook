@@ -213,3 +213,50 @@ table {
 .modo-de-preparo{
     line-height: 1.6;
 }
+
+/* criar nova*/
+
+.bloco-criar{
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hint_id_ingredientes{
+    font-weight: 500;
+}
+
+#div_id_imagem{
+    width: 40%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#div_id_modo_de_preparo{
+    margin-top: 10px;
+}
+
+.django-ckeditor-widget{
+    display: inline !important;
+}
+#div_id_titulo{
+    padding-bottom: 10px;
+}
+
+#div_id_dificuldade{
+    width: 25%;
+    padding-bottom: 10px;
+}
+
+#div_id_categoria{
+    width: 25%;
+    margin-right: 42%;
+    float: right;
+}
+
+#div_id_rendimento{
+    width: 25%;
+    margin-right: 10%;
+    margin-top: -80px;
+    float: right;
+}

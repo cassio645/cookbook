@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'myapp.apps.MyappConfig',
     # 3rd apps
     'ckeditor',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold',],
+        ],
+        "height": '100%', "width": '100%',
+    }
+}

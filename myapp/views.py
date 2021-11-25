@@ -3,9 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
-from .models import Receita, Categoria
 from django.urls import reverse_lazy
 
+from .models import Receita, Categoria
+from .forms import ReceitaForm
 
 
 class IndexView(ListView):
@@ -39,7 +40,13 @@ class IndexView(ListView):
         return context
 
 
-
 class DetalheView(DetailView):
+    # nome que vai ser chamado no template
     context_object_name = 'receita'
     queryset = Receita.objects.all()
+
+
+class CriarView(CreateView):
+    form_class = ReceitaForm
+    model = Receita
+    success_url = reverse_lazy("receitas:home")

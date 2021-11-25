@@ -10,7 +10,6 @@ class Categoria(models.Model):
 
     class Meta:
         ordering = ("nome",)
-    
     def __str__(self):
         return self.nome
     
@@ -31,6 +30,7 @@ class Receita(models.Model):
     imagem = models.ImageField()
     ingredientes = ArrayField(models.TextField())
     modo_de_preparo = RichTextField()
+    # created auto now + class meta ordering created e updated
 
     def __str__(self):
         return self.titulo
