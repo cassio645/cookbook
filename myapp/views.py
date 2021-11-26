@@ -1,6 +1,6 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, render
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
@@ -87,3 +87,7 @@ def delete_receita(request, pk):
     if autor_receita == user_delete:
         receita.delete()
     return redirect('receitas:minhas')
+
+
+def sobre(request):
+    return render(request, 'myapp/about.html')

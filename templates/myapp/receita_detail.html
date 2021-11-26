@@ -41,10 +41,12 @@
             </ul>
         </div>
 
+        {% if receita.dica %}
         <div class="col-sm-4 div-dica">
             <h5>Dica!!!</h5>
-             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, maxime.</p>
+             <p>{{ receita.dica }}</p>
         </div>
+        {% endif %}
 
         <div class="col-md-8">
             <h3>Modo de Preparo:</h3>

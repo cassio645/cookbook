@@ -4,3 +4,11 @@ function deleteFunction(id, title){
         location.replace("/deletar/" + id);
     }
 }
+
+function mudarCss(){
+    if (document.getElementById("dica-sim").checked){
+        document.getElementById('div_id_dica').style.display = "block"
+    }else {
+        document.getElementById('div_id_dica').style.display = "none";
+    }
+}

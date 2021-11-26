@@ -12,9 +12,9 @@ class ReceitaForm(forms.ModelForm):
         error_messages={'item_invalid': 'Por favor remova o último ; '},
         help_text="Separe os ingredientes usando ponto e vírgula ;", delimiter=";"
       )
-      #dica = CharField(widget=Textarea(attrs={'placeholder': 'Caso você tenha alguma dica, escreva aqui...'}))
+
 
     class Meta:
         model = Receita
-        fields = ["titulo", "categoria", "dificuldade", "rendimento", "imagem", "ingredientes", "modo_de_preparo"]
+        fields = ["titulo", "categoria", "dificuldade", "rendimento", "imagem", "ingredientes", "modo_de_preparo", 'dica']
 
