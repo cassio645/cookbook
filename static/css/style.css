@@ -170,8 +170,8 @@ body{
 .link-categoria{
     text-decoration: none;
     display: inline-block;
-    padding-left: 1px;
-    color:#242021;
+    padding-left: 5px;
+    color:#312a29;
 }
 .btn-search{
     padding-right: 10px;
@@ -332,17 +332,17 @@ table {
     margin-top: 1%;
     float: right;
     padding: 1% 5%;
-    background-color: #522215 !important;
-    border-color: #522215 !important;
+    background-color: #a66d38 !important;
+    border-color: #a66d38 !important;
     box-shadow: none !important;
     outline:none !important;
-    color: #ceb780;
+    color: #eeeeee;
     transition: 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #522215e8 !important;
-    border-color: #522215 !important;
+    background-color: #452515 !important;
+    border-color: #452515 !important;
     color: white !important;;
 }
 
