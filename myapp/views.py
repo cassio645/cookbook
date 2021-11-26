@@ -77,4 +77,13 @@ class EditarView(UpdateView):
     template_name = "myapp/receita_edit.html"
     success_url = reverse_lazy('receitas:home')
 
+@login_required()
+def delete_receita(request, pk):
+    receita = Receita.objects.get(pk=pk)
+    user = User.objects.get(username=request.user)
 
+    user_delete = str(user).lower().strip()
+    autor_receita = str(receita.autor).lower().strip()
+    if autor_receita == user_delete:
+        receita.delete()
+    return redirect('receitas:minhas')

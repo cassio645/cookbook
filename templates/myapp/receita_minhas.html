@@ -55,6 +55,7 @@
                             <a href="{% url 'receitas:editar' pk=receita.id %}">
                                 <input type="submit" value="Editar" class="btn btn-warning" id="editar">
                             </a>
+                            <button class="btn btn-danger" onclick="deleteFunction('{{receita.id}}', '{{receita.titulo}}')">Apagar</button>
                         </div>
                     </div>
                 </div>
