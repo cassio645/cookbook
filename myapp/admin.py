@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Receita, Categoria
-from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
+from .models import Categoria, Receita
 
-class MyModelAdmin(admin.ModelAdmin, DynamicArrayMixin):
-    pass
+class ReceitaAdmin(admin.ModelAdmin):
+    model = Receita
+    list_display = ("titulo", "autor", "categoria")
 
-admin.site.register(Receita, MyModelAdmin)
 admin.site.register(Categoria)
+admin.site.register(Receita, ReceitaAdmin)

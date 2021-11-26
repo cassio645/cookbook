@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # 3rd apps
     'ckeditor',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -73,8 +74,8 @@ WSGI_APPLICATION = 'cookbook.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_receita',
-        'USER': 'admindb',
+        'NAME': 'dj_receitas',
+        'USER': 'admin_receitas',
         'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -119,7 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = "/media/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+MEDIA_ROOT = BASE_DIR / "static/media"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
@@ -127,8 +130,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -148,3 +150,12 @@ CKEDITOR_CONFIGS = {
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
+
+# AWS CONFIG
+
+AWS_QUERYSTRING_AUTH = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'receitas645'

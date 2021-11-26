@@ -39,11 +39,12 @@ class IndexView(ListView):
         context["categorias"] = Categoria.objects.all()
         return context
 
+
 @method_decorator(login_required, name="dispatch")
 class MinhasReceitas(ListView):
     model = Receita
     context_object_name = 'receitas'
-    template_name = "myapp/receitas_minhas.html"
+    template_name = "myapp/receita_minhas.html"
     paginate_by = 9
 
     def get_queryset(self):
@@ -57,9 +58,10 @@ class DetalheView(DetailView):
     queryset = Receita.objects.all()
 
 
+@method_decorator(login_required, name="dispatch")
 class CriarView(CreateView):
-    form_class = ReceitaForm
     model = Receita
+    form_class = ReceitaForm
     success_url = reverse_lazy("receitas:home")
 
     def form_valid(self, form):
@@ -68,6 +70,7 @@ class CriarView(CreateView):
         return super(CriarView, self).form_valid(form)
 
 
+@method_decorator(login_required, name="dispatch")
 class EditarView(UpdateView):
     model = Receita
     form_class = ReceitaForm

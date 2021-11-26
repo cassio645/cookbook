@@ -107,11 +107,16 @@ body{
 
 .bloco-info-receita{
     background-color: white;
+    border-right: 4px solid rgba(128, 128, 128, 0.200);
+    border-bottom: 4px solid rgba(128, 128, 128, 0.200);
+    border-radius: 5px;
     padding: 5px;
     width: 80%;
+    min-width: 40vh;
+    max-width: 80vh;
     height: 70%;
     text-align: center;
-    transition: 0.2s;
+
 }
 
 .bloco-info-receita:hover{
@@ -122,11 +127,14 @@ body{
 
 .imagem-comida{
     height: auto;
+    max-height: 40vh;
+    min-height: 35vh;
     width: 100%;
 }
+
 .titulo-comida{
-    font-weight: 500;
-    padding-top: 1%;
+    font-weight: 600;
+    margin-top: 2%;
     color: rgb(65, 49, 34);
 }
 
@@ -263,4 +271,91 @@ table {
     margin-right: 10%;
     margin-top: -80px;
     float: right;
+}
+/* minhas */
+
+.minha-page{
+    padding-left: 2%;
+    text-align: left;
+    margin-top: 40px;
+}
+.center{
+    text-align: center;
+}
+
+.perfil{
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: start;
+    padding: 2% 5%;
+    border: 3px solid #522215;
+}
+
+.perfil h2{
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.table-perfil{
+    line-height: 2;
+}
+
+#title-minhas{
+    font-size: 40px;
+}
+
+.botoes{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#editar{
+    margin-right: 10%;
+}
+
+.sem-receita{
+    padding-bottom: 10%;
+}
+
+
+
+/* primary button */
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    margin-top: 1%;
+    float: right;
+    padding: 1% 5%;
+    background-color: #522215 !important;
+    border-color: #522215 !important;
+    box-shadow: none !important;
+    outline:none !important;
+    color: #ceb780;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #522215e8 !important;
+    border-color: #522215 !important;
+    color: white !important;;
+}
+
+
+
+/*footer*/
+
+footer{
+    height: 400px;
+    width: 100%;
+    margin-top: 200px;
+    border-top: 7px solid #a66d38;
+    background-color: #242021;
+    color:white;
+    text-align: center;
 }
