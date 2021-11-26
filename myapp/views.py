@@ -39,6 +39,17 @@ class IndexView(ListView):
         context["categorias"] = Categoria.objects.all()
         return context
 
+@method_decorator(login_required, name="dispatch")
+class MinhasReceitas(ListView):
+    model = Receita
+    context_object_name = 'receitas'
+    template_name = "myapp/receitas_minhas.html"
+    paginate_by = 9
+
+    def get_queryset(self):
+        # filtrando receitas apenas daquele usuário
+        return Receita.objects.filter(autor=self.request.user)
+
 
 class DetalheView(DetailView):
     # nome que vai ser chamado no template
@@ -50,6 +61,11 @@ class CriarView(CreateView):
     form_class = ReceitaForm
     model = Receita
     success_url = reverse_lazy("receitas:home")
+
+    def form_valid(self, form):
+        # pega o usuário logado atualmente e coloca como autor da receita
+        form.instance.autor = self.request.user
+        return super(CriarView, self).form_valid(form)
 
 
 class EditarView(UpdateView):

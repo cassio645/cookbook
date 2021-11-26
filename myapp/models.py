@@ -19,10 +19,11 @@ class Categoria(models.Model):
 
 class Receita(models.Model):
     DIFICULDADE = (
-        ('facil', "Fácil"),  # ALTERAR AQUI PRA EXATAMENTE O MSM VALOR
+        ('fácil', "Fácil"),
         ('mediana', "Mediana"),
         ('complexa', "Complexo"),
     )
+    autor = models.ForeignKey(User, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=35)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name="receitas")
     dificuldade = models.CharField(max_length=8, choices=DIFICULDADE)
@@ -30,7 +31,11 @@ class Receita(models.Model):
     imagem = models.ImageField()
     ingredientes = ArrayField(models.TextField())
     modo_de_preparo = RichTextField()
-    # created auto now + class meta ordering created e updated
+    dica = models.CharField(max_length=300, null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created"]
 
     def __str__(self):
         return self.titulo

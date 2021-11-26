@@ -26,8 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # my apps
     'myapp.apps.MyappConfig',
+    'users.apps.UsersConfig',
+
     # 3rd apps
     'ckeditor',
     'crispy_forms',
@@ -129,6 +132,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# configuracao do ckeditor
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
@@ -138,3 +142,9 @@ CKEDITOR_CONFIGS = {
         "height": '100%', "width": '100%',
     }
 }
+
+# auth redirect
+
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'
